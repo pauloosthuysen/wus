@@ -3,6 +3,9 @@
 	
 	angular.module('maesonApp', [
 		'ngRoute',
-		'home'
+		'home',
+		'about',
+		'services',
+		'contact'
 	]);
 }());
