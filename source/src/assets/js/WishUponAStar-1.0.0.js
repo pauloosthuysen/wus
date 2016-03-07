@@ -227,6 +227,21 @@
                 ]
             }
         ];
+        $scope.portfolioList = [
+            {
+                url: 'assets/images/portfolio/portfolio1.jpg'
+            },{
+                url: 'assets/images/portfolio/portfolio2.jpg'
+            },{
+                url: 'assets/images/portfolio/portfolio3.jpg'
+            },{
+                url: 'assets/images/portfolio/portfolio4.jpg'
+            },{
+                url: 'assets/images/portfolio/portfolio5.jpg'
+            },{
+                url: 'assets/images/portfolio/portfolio6.jpg'
+            }
+        ];
 
         $scope.addSlide = function(url, title, text) {
             slides.push({
