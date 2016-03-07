@@ -3,7 +3,7 @@
 
     angular
         .module('home', [
- 			
+ 			'ui.bootstrap'
         ]);
 
     angular.module('home')

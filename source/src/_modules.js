@@ -3,6 +3,7 @@
 	
 	angular.module('maesonApp', [
 		'ngRoute',
+		'ui.bootstrap',
 		'home',
 		'about',
 		'services',
