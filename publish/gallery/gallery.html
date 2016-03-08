@@ -1,0 +1,10 @@
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<h1 class="page-header">
+        Project Gallery
+    </h1>
+</div>
+<div class="col-md-4 col-sm-6" ng-repeat="item in self.GalleryList">
+	<a href="{{item.url}}" target="_blank">
+        <img class="img-responsive img-portfolio img-hover" ng-src="{{item.url}}" alt="">
+    </a>
+</div>

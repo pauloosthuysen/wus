@@ -9,6 +9,7 @@
 		'home',
 		'about',
 		'services',
-		'contact'
+		'contact',
+		'gallery'
 	]);
 }());

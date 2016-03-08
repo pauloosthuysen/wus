@@ -22,7 +22,7 @@
 	        <div class="col-md-3" ng-repeat="service in servicesList">
 	            <div class="panel panel-default">
 	                <div class="panel-heading text-center">
-	                    <h4><i class="fa fa-fw fa-check"></i> {{service.title}}</h4>
+	                    <h4>{{service.title}}</h4>
 	                </div>
 	                <div class="panel-body">
 	                    <ul>
@@ -40,7 +40,7 @@
 	    <!-- Portfolio Section -->
 	    <div class="row">
 	        <div class="col-md-4 col-sm-6" ng-repeat="item in portfolioList">
-	            <a href="portfolio-item.html">
+	            <a href="{{item.url}}" target="_blank">
 	                <img class="img-responsive img-portfolio img-hover" ng-src="{{item.url}}" alt="">
 	            </a>
 	        </div>

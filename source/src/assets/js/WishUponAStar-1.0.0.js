@@ -9,7 +9,8 @@
 		'home',
 		'about',
 		'services',
-		'contact'
+		'contact',
+		'gallery'
 	]);
 }());
 (function(){
@@ -74,6 +75,26 @@
                     title: 'Contact',
     				templateUrl: 'contact/contact.html',
     				controller: 'ContactCtrl',
+                    controllerAs: 'self'
+    			});
+    	});
+
+})();
+(function() {
+    'use strict';
+
+    angular
+        .module('gallery', [
+ 			
+        ]);
+
+    angular.module('gallery')
+    	.config(function($routeProvider){
+    		$routeProvider
+    			.when('/gallery', {
+                    title: 'Gallery',
+    				templateUrl: 'gallery/gallery.html',
+    				controller: 'GalleryCtrl',
                     controllerAs: 'self'
     			});
     	});
@@ -187,6 +208,42 @@
                 .error(function(data, status, headers, config){
                     toaster.pop('error', 'Error', 'There was a problem sending the request. Please try again.');
                 });
+        }
+    	/* endregion methods */
+    }
+}());
+(function () {
+    'use strict';
+
+    angular.module('gallery')
+        .controller('GalleryCtrl', GalleryCtrl);
+
+    /* ngInject */
+    function GalleryCtrl($scope){
+    	var self = this;
+
+    	/* region variables */
+		self.Title = 'GalleryCtrl';
+        self.GalleryList = [];
+    	/* endregion variables */
+
+    	/* region method index */
+
+    	/* endregion method index */
+
+    	init();
+
+    	/* region methods */
+    	function init(){
+            populateGalleryList();
+    	}
+
+        function populateGalleryList(){
+            for(var i = 0; i < 18; i++){
+                self.GalleryList.push({
+                    url: 'assets/images/gallery/gallery' + (i + 1) + '.jpg'
+                });
+            }
         }
     	/* endregion methods */
     }
