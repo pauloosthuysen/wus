@@ -46,14 +46,17 @@ module.exports = function(grunt) {
 				'bower_components/bootstrap/dist/js/bootstrap.js',
 				'bower_components/angular-route/angular-route.js',
 				'bower_components/angular-bootstrap/ui-bootstrap.js',
-				'bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
+				'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+				'bower_components/angular-resource/angular-resource.js',
+				'bower_components/AngularJS-Toaster/toaster.js'
 			],
 			dest: '<%= pkg.srcDir %>/assets/js/vendor-<%= pkg.version %>.js'
 		},
 		vendor_css: {
 			src: [
 				'bower_components/bootstrap/dist/css/bootstrap.css',
-				'bower_components/bootstrap/dist/css/bootstrap-theme.css'
+				'bower_components/bootstrap/dist/css/bootstrap-theme.css',
+				'bower_components/AngularJS-Toaster/toaster.css'
 			],
 			dest: '<%= pkg.srcDir %>/assets/css/vendor-<%= pkg.version %>.css'
 		}
@@ -96,6 +99,14 @@ module.exports = function(grunt) {
 					cwd: '<%= pkg.srcDir %>/',
 					src: [
 						'assets/**',
+					], 
+					dest: '<%= pkg.publishDir %>/'
+				},
+				{
+					expand: true, 
+					cwd: '<%= pkg.srcDir %>/',
+					src: [
+						'bin/**',
 					], 
 					dest: '<%= pkg.publishDir %>/'
 				}
