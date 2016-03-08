@@ -1,19 +1,22 @@
 <?php
+$inputJSON = file_get_contents('php://input');
+$input = json_decode( $inputJSON, TRUE );
 // check if fields passed are empty
-if(empty($_POST['name'])  		||
-   empty($_POST['phone']) 		||
-   empty($_POST['email']) 		||
-   empty($_POST['message'])	||
-   !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
+if(empty($input['Name'])  		||
+   empty($input['Phone']) 		||
+   empty($input['Email']) 		||
+   empty($input['Message'])	||
+   !filter_var($input['Email'],FILTER_VALIDATE_EMAIL))
    {
-	echo "No arguments Provided!";
-	return false;
+      http_response_code(400);
+      // $retVal = "No arguments Provided!";
+      return $retVal;
    }
 	
-$name = $_POST['name'];
-$phone = $_POST['phone'];
-$email_address = $_POST['email'];
-$message = $_POST['message'];
+$name = $input['Name'];
+$phone = $input['Phone'];
+$email_address = $input['Email'];
+$message = $input['Message'];
 	
 // create email body and send it	
 $to = 'oosthuysen.paul@gmail.com'; // PUT YOUR EMAIL ADDRESS HERE
@@ -22,5 +25,7 @@ $email_body = "You have received a new message from your website's contact form.
 $headers = "From: noreply@your-domain.com\n";
 $headers .= "Reply-To: $email_address";	
 mail($to,$email_subject,$email_body,$headers);
-return true;			
+http_response_code(200);
+// $retVal = "OK";
+return $retVal;			
 ?>

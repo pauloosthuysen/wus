@@ -1,15 +1,14 @@
 (function(){
 	'use strict';
 
-	angular.module('maesonApp', [
+	angular.module('wupApp', [
 		'ngRoute',
 		'ngResource',
 		'ui.bootstrap',
+		'toaster',
 		'home',
 		'about',
 		'services',
 		'contact'
 	]);
-
-	angular.module('Common.services', ['ngResource', 'toaster']);
 }());

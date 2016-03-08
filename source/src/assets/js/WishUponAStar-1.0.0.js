@@ -1,22 +1,21 @@
 (function(){
 	'use strict';
 
-	angular.module('maesonApp', [
+	angular.module('wupApp', [
 		'ngRoute',
 		'ngResource',
 		'ui.bootstrap',
+		'toaster',
 		'home',
 		'about',
 		'services',
 		'contact'
 	]);
-
-	angular.module('Common.services', ['ngResource', 'toaster']);
 }());
 (function(){
 	'use strict';
 
-	angular.module('maesonApp')
+	angular.module('wupApp')
 		.config(['$routeProvider',
 			function($routeProvider){
 				/* For any unmatched url, redirect to / */
@@ -24,7 +23,7 @@
 			}
 		]);
 
-	angular.module('maesonApp')
+	angular.module('wupApp')
 		.run(['$rootScope', '$route',
 			function($rootScope, $route){
 				$rootScope.OriginalTitle = null;
@@ -40,25 +39,6 @@
 			    });
 			}
 		]);
-}());
-(function () {
-	'use strict';
-	angular.module('Common.services')
-	.factory('EmailMe', ['$resource', '$http',
-	   function( $resource, $http ) {
-			var controller = "EmailMe.php";
-			var silent = {
-				get : false,
-				save : false
-			};
-
-			var version = 1;
-
-			var resource = $resource( 'bin/' + controller, {}, silent, version,  "Loading EmailMe ...");
-
-			return resource;
-		}
-	]);
 }());
 (function() {
     'use strict';
@@ -85,8 +65,6 @@
 
     angular
         .module('contact', [
-            'ngResource',
- 			'Common.services'
         ]);
 
     angular.module('contact')

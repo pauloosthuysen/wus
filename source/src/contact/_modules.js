@@ -3,8 +3,6 @@
 
     angular
         .module('contact', [
-            'ngResource',
- 			'Common.services'
         ]);
 
     angular.module('contact')

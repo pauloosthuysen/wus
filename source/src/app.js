@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 
-	angular.module('maesonApp')
+	angular.module('wupApp')
 		.config(['$routeProvider',
 			function($routeProvider){
 				/* For any unmatched url, redirect to / */
@@ -9,7 +9,7 @@
 			}
 		]);
 
-	angular.module('maesonApp')
+	angular.module('wupApp')
 		.run(['$rootScope', '$route',
 			function($rootScope, $route){
 				$rootScope.OriginalTitle = null;
