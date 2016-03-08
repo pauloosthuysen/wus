@@ -5,6 +5,7 @@
   "main": "index.html",
   "srcDir": "src",
   "dstDir": "src",
+  "publishDir": "../publish",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-copy": "^0.8.2",
     "grunt-contrib-jshint": "^0.12.0",

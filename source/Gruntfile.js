@@ -79,6 +79,27 @@ module.exports = function(grunt) {
 					dest: '<%= pkg.srcDir %>/assets/'
 				}
 			]
+		},
+		publish: {
+			files: [
+				{
+					expand: true, 
+					cwd: '<%= pkg.srcDir %>/',
+					src: [
+						'**/*.html',
+						'!_templates/*.html',
+					], 
+					dest: '<%= pkg.publishDir %>/'
+				},
+				{
+					expand: true, 
+					cwd: '<%= pkg.srcDir %>/',
+					src: [
+						'assets/**',
+					], 
+					dest: '<%= pkg.publishDir %>/'
+				}
+			]
 		}
 	},
 	jshint: {
@@ -105,6 +126,14 @@ module.exports = function(grunt) {
 	      spawn: false,
 	    },
 	  },
+	},
+	clean: {
+		publish:{
+			options: {
+				'force': true
+			},
+			src: ["<%= pkg.publishDir %>/**"]
+		}
 	}
   });
 
@@ -116,6 +145,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   // Default task(s).
   grunt.registerTask('default', ['watch']);
@@ -128,6 +158,12 @@ module.exports = function(grunt) {
   		'concat:vendor_css',
   		'less:build',
   		'copy:vendor_fonts'
+	]);
+
+  grunt.registerTask('publish', [
+  		'build',
+  		'clean:publish',
+  		'copy:publish'
 	]);
 
 };
