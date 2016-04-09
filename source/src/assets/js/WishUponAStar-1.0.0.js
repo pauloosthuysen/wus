@@ -292,7 +292,9 @@
                     'Cameras',
                     'Telephones',
                     'Computer Equipment',
-                    'Networking'
+                    'Networking',
+                    'Web Site Design',
+                    'Web Site Hosting'
                 ]
             },{
                 title: 'Lab Equipment',
