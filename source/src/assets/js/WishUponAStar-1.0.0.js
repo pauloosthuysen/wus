@@ -185,6 +185,10 @@
             Email: '',
             Message: ''
         };
+        self.ContactDetails = {
+            ContactNumber: '+27 (0) 79 976 2792',
+            Email: 'wishuponastarprojects@gmail.com'
+        };
         self.MessageSent = false;
     	/* endregion variables */
 
